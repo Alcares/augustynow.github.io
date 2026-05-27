@@ -14,10 +14,12 @@
   --accent:    #c2670a;
   --accent-h:  #a0540a;
   --nav-h:     56px;
+  --footer-h:  48px;
   --max-w:     680px;
 }
 
 html {
+  font-size: 17px;
   scroll-behavior: smooth;
   scroll-padding-top: var(--nav-h);
 }
@@ -54,7 +56,7 @@ body {
 }
 
 .nav-name {
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: 500;
   letter-spacing: 0.01em;
   color: var(--text);
@@ -67,7 +69,7 @@ body {
 }
 
 .nav-links a {
-  font-size: 0.95rem;
+  font-size: 1.1rem;
   text-decoration: none;
   color: var(--muted);
   transition: color 0.15s;
@@ -78,17 +80,11 @@ body {
   color: var(--accent);
 }
 
-/* ─── Tab visibility ──────────────────────────────────────────────────────── */
-
-.tab-hidden {
-  display: none;
-}
-
 /* ─── Sections ────────────────────────────────────────────────────────────── */
 
 section {
-  min-height: 100vh;
-  padding: calc(var(--nav-h) + 4rem) 2rem 5rem;
+  min-height: calc(100vh - var(--footer-h));
+  padding: calc(var(--nav-h) + 4rem) 2rem calc(var(--footer-h) + 3rem);
 }
 
 .section-inner {
@@ -119,8 +115,8 @@ h3 {
 /* ─── Home ────────────────────────────────────────────────────────────────── */
 
 section#home {
-  min-height: 100vh;
-  padding: var(--nav-h) 2rem 0;
+  min-height: calc(100vh - var(--footer-h));
+  padding: var(--nav-h) 2rem var(--footer-h);
   display: flex;
   align-items: center;
 }
@@ -369,15 +365,24 @@ h1 {
 /* ─── Footer ──────────────────────────────────────────────────────────────── */
 
 footer {
-  padding: 1.5rem 2rem;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: var(--footer-h);
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
   border-top: 1px solid var(--border);
+  background: var(--bg);
+  z-index: 99;
 }
 
 .footer-inner {
   max-width: calc(var(--max-w) + 4rem);
   margin: 0 auto;
   color: var(--muted);
-  font-size: 0.88rem;
+  font-size: 1rem;
 }
 
 /* ─── Responsive ──────────────────────────────────────────────────────────── */
