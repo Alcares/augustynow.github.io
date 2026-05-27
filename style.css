@@ -78,16 +78,17 @@ body {
   color: var(--accent);
 }
 
+/* ─── Tab visibility ──────────────────────────────────────────────────────── */
+
+.tab-hidden {
+  display: none;
+}
+
 /* ─── Sections ────────────────────────────────────────────────────────────── */
 
 section {
   min-height: 100vh;
   padding: calc(var(--nav-h) + 4rem) 2rem 5rem;
-  border-bottom: 1px solid var(--border);
-}
-
-section:last-of-type {
-  border-bottom: none;
 }
 
 .section-inner {
